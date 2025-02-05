@@ -26,7 +26,7 @@ jobs:
 
       - name: Commit formatted files
         run: |
-          git config --global user.name "Singam Ravi Bab"
+          git config --global user.name "Singam Ravi Babu"
           git config --global user.email "singam.ravibabu@gmail.com"
           git add .
           git commit -m "Auto-formatted code with Prettier" || echo "No changes to commit"
