@@ -1,2 +1,2 @@
-function greet(name){console.log("Hello, " + name );}
-greet("GitHub Actions");
+function  test ( ) {console.log ("Th is not formatted properly" );}
+test();
