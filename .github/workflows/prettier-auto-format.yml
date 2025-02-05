@@ -1,0 +1,33 @@
+name: Auto Format Code with Prettier
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository Code
+        uses: checkout/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Prettier
+        run: npm install -g prettier
+
+      - name: Run Prettier on JavaScript and CSS files
+        run: prettier --write "**/*.{js,css}"
+
+      - name: Commit formatted files
+        run: |
+          git config --global user.name "Singam Ravi Bab"
+          git config --global user.email "singam.ravibabu@gmail.com"
+          git add .
+          git commit -m "Auto-formatted code with Prettier" || echo "No changes to commit"
+          git push
